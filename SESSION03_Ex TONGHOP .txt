@@ -1,0 +1,61 @@
+SESSION03
+(Bài Tập Tổng Hợp) Kiến Trúc Hệ Điều Hành & Tư Duy Quản Lý File
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần1: Kiến trúc Hệ điều hành.
++ Đây là hoạt động chức năng quản lý tiến trình và quản lý tài nguyên của hệ điều hành. Word, Chrome, VS Code và Portal chạy cùng lúc nhờ hệ điều hành phân chia CPU, RAM và quản lý các tiến trình riêng, giúp chúng hoạt động ổn định, hạn chế xung đột.
++ Khi double-click file, thao tác với Shell trước. Shell nhận thao tác và yêu cầu hệ điều hành mở file bằng ứng dụng phù hợp. Kernel quản lý phần cứng, bộ nhớ và tiến trình nên người dùng thường không làm việc trực tiếp với nó.
+
+Phần2: Cây thư mục và ổ đĩa.
+1. Dựa vào cây thư mục ở mục 3b, hãy xác định:
+- Root Directory: D:\
+- Parent Directory trực tiếp: D:\Nam1\HocKy1\MonHoc\CongNgheThongTin\BaiTapLon\Session02\BaoCaoCuoiKy\Chuong1\Hinh anh
+- Vai trò của file: anh 1.jpg là lá vì đây là file, không phải thư mục chứa các mục khác.
+2. Hai lý do không nên lưu dự án ở Desktop hoặc Downloads:
+- Dễ bị xóa nhầm hoặc mất khi dọn dẹp, đồng bộ hay cài lại Windows.
+- Khó quản lý file, dễ lẫn với tài liệu cá nhân và các file tải về.
+Nơi lưu phù hợp: D:\02_Projects\BaiTapLonIT101\
+
+Phần3: Đường dẫn Path.
+1. Absolute Path:
+D:\Nam1\HocKy1\MonHoc\CongNgheThongTin\BaiTapLon\Session02\BaoCaoCuoiKy\Chuong1\Hinh anh\anh 1.jpg
+2. Relative Path của logo.png trong report.html:
+./assets/logo.png
+
+Dấu . đại diện cho thư mục hiện tại. Vì report.html và thư mục assets cùng nằm trong thư mục gốc dự án nên đường dẫn tương đối giúp file vẫn được tìm thấy khi chuyển cả thư mục BaiTapLonIT101 sang máy khác.
+
+Phần4: Quy tắc đặt tên chuẩn.
+Đổi tên file:
+bao-cao-bai-tap-lon-it101-ban-cuoi-v2.docx
+
+Tên này sử dụng kebab-case, các từ được viết thường và ngăn cách bằng dấu gạch ngang -, không có dấu tiếng Việt hay khoảng trắng.
+
+Phần5: Tổ chức và dọn dẹp ổ đĩa.
+1. Số cấp thư mục hiện tại:
+
+Đường dẫn có 9 cấp thư mục, từ Nam1 đến Hinh anh (không tính ổ đĩa và file), đường dẫn này vi phạm quy tắc 3 cấp thư mục vì lồng quá sâu, gây khó tìm kiếm và quản lý file.
+
+2. Đề xuất cấu trúc mới:
+D:\
+      01_HocTap\
+      02_Projects\
+ 	     BaiTapLonIT101\
+	         HinhAnh\
+		     anh-1.jpg
+      03_Personal\
+      04_Media\
+  
+File anh-1.jpg nằm ở cấp 3 là HinhAnh, đúng quy tắc đã cho. Cấu trúc này giúp phân loại rõ ràng và dễ sao lưu hơn.
+
+Phần6: Đuôi file và file ẩn.
+   + Đây có thể là cạm bẫy giả đuôi file. File hiển thị de-thi-dap-an.pdf nhưng tên thật có thể là:
+de-thi-dap-an.pdf.exe
+
+Cách kiểm tra trước khi mở:
+- Mở File Explorer.
+- Chọn View -> Show -> File name extensions trên Windows 11.
+- Kiểm tra lại tên đầy đủ và phần đuôi file.
+- Nếu file đáng ngờ được tải từ link lạ trên Zalo, không mở file, hãy xóa hoặc nhờ người có chuyên môn kiểm tra.

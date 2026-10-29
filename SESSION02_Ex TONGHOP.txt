@@ -1,0 +1,55 @@
+SESSION02
+(Bài Tập Tổng Hợp) Tech Lead của Cyber Arena
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+PHẦN 1:Lĩnh vực CNTT và đơn vị lưu trữ.
+1. Lựa chọn nhân sự kỹ thuật:
++ Em chọn ứng viên B (lĩnh vực Mạng máy tính / Quản trị hệ thống).
+Vì Cyber Arena cần một người có thể lắp ráp, sửa chữa và bảo trì dàn máy tính, đồng thời đảm bảo mạng ổn định để khách chơi game và đội tuyển livestream không bị gián đoạn. Đây là nhu cầu cần thiết để trung tâm hoạt động tốt.
+
+2. Sắp xếp đơn vị dung lượng theo thứ tự tăng dần
+Byte -> KB -> MB -> GB -> TB
+
+PHẦN 2: Mô hình IPO và lĩnh vực CNTT.
+1. Hệ thống theo mô hình IPO
+
+Thành phần 				Nội dung
+
+
+Input (Đầu vào)				Hình ảnh, âm thanh từ game, micro và webcam.
+Process (Xử lý)				Phần mềm xử lý, mã hóa và nén video.
+Output (Đầu ra)				Video trận đấu hoặc luồng livestream.
+Storage (Lưu trữ)			Ổ SSD/HDD dùng để lưu video xem lại.
+
+2. Một số lĩnh vực liên quan:
++ Mạng máy tính_Quản trị hệ thống: Thiết lập mạng và duy trì đường truyền ổn định để livestream, kết nối các máy tính.
++ Truyền thông đa phương tiện: Sử dụng phần mềm để xử lý, mã hóa và truyền tải video trận đấu lên YouTube.
+
+PHẦN 3: Tính toán dung lượng và tốc độ mạng.
+1. Tính dung lượng lưu trữ
++ Ta có:dung lượng video của 20 trận đấu: 20 × 500 = 10.000 MB
+Đổi sang GB: 10.000 ÷ 1.024 ≈ 9,77 GB
+Ổ SSD 512 GB đủ để lưu video của một tháng.
+Dung lượng còn trống sau một tháng: 512 − 9,77 = 502,23 GB
+
+2. Tính tốc độ mạng
++ Ta có: tốc độ mạng tối đa đổi sang MB/s: 100 ÷ 8 = 12,5 MB/s
++ Thời gian tải lên video 200 MB: 200 ÷ 12,5 = 16 giây
++ Theo thực tế thì thời gian thường sẽ lâu hơn vì tốc độ mạng không ổn định hoặc máy chủ YouTube giới hạn tốc độ tải lên.
+
+PHẦN 4: Phần cũng và mô hinhd DIKW.
+1. Lựa chọn linh kiện nâng cấp: Em chọn nâng cấp RAM từ 16 GB lên 32 GB.
++ Vì khi vừa chơi game vừa quay và livestream, máy phải chạy nhiều chương trình cùng lúc nên cần nhiều bộ nhớ RAM. Nếu RAM không đủ, máy có thể bị chậm hoặc giật lag. Nâng cấp RAM sẽ giúp máy có thêm bộ nhớ để xử lý nhiều tác vụ cùng lúc, nhất là khi RAM hiện tại đang gần đầy.
+
+2. Áp dụng mô hình DIKW vào tình huống huấn luyện viên
+Cấp độ	     Nội dung trong tình huống						                   Vì sao
+
+Dữ liệu      Video trận đấu và thời điểm tuyển thủ bị hạ gục, chủ yếu ở phút 15–20.		Đây là dữ liệu thu thập được từ trận đấu.
+Thông tin    Huấn luyện viên xem video và nhận thấy tuyển thủ thường bị hạ gục ở phút 15–20.    Dữ liệu đã được xem xét để nhận ra một tình trạng cụ thể.
+Kiến thức    Huấn luyện viên phát hiện nguyên nhân là thiếu tầm nhìn bản đồ.                    Từ việc phân tích, huấn luyện viên hiểu được nguyên nhân của vấn đề.
+Trí tuệ      Huấn luyện viên yêu cầu mua thêm mắt Ward cho trận sau.Đây là quyết định áp dụng   kiến thức để cải thiện chiến thuật.
+

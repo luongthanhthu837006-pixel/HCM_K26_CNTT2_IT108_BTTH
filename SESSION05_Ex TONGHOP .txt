@@ -1,0 +1,62 @@
+SESSION05
+(Bài tập tổng hợp) Giao Diện Dòng Lệnh Terminal Cơ Bản
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+Phần1: CLI vs GUI và cấu trúc câu lệnh.
+1. Xác định:
++ Command: ls – liệt kê file và thư mục.
++ Options/Flags: -Force – hiển thị cả file ẩn.
++ Argument: C:\Windows\Logs – đường dẫn cần xem.
+
+2. Giải thích.
+Terminal giúp thao tác nhanh, ít tốn tài nguyên và dễ tự động hóa công việc.
+
+Phần2: Điều hướng hệ thống file.
+1. Viết lệnh:
+cd .\quan-ly-sinh-vien
+
+2. Viết Absolute Path đầy đủ, chính xác tới file main.py.
+C:\Users\student\Desktop\quan-ly-sinh-vien\src\main.py
+
+3. Viết lệnh powershell.
+ls -Force ..\data
+
+Phần3: Thao tác file và thư mục.
+1. Viết lệnh tạo cũng lúc 2 thư mục con.
+New-Item -ItemType Directory -Path .\quan-ly-sinh-vien\src, .\quan-ly-sinh-vien\data -Force
+
+2. Viết lệnh tạo 3 file rỗng.
+New-Item -ItemType File -Path .\src\main.py, .\src\utils.py, .\README.md
+
+3. Sửa đổi tên:
+Đổi tên:
+Rename-Item .\quan-ly-sv -NewName quan-ly-sinh-vien
+
+Sao lưu toàn bộ thư mục:
+Copy-Item .\quan-ly-sinh-vien .\backup-quan-ly-sinh-vien -Recurse
+
+Phần4: Xử lý lỗi Terminal.
+1. Log lỗi số 2
++ Nguyên nhân: Gõ sai tên thư mục scr, đúng phải là src, hoặc thư mục chưa được tạo.
++ Cách kiểm tra: Gõ cd s rồi nhấn Tab để xem PowerShell gợi ý tên thư mục.
++ Lệnh sửa: cd .\src
+
+2. Log lỗi số 3
++ Nguyên nhân: Lỗi Access is denied, có thể do thiếu quyền truy cập hoặc file bị Windows chặn.
++ Cách khắc phục: Kiểm tra file và quyền truy cập, nếu file đáng tin cậy nhưng bị chặn do tải từ Internet, dùng: Unblock-File .\setup.ps1
+
+3. Log lỗi số 1
++ Nguyên nhân: Thư mục old-version có chứa file bên trong nên PowerShell yêu cầu xác nhận trước khi xóa.
++ Lệnh xóa không hỏi xác nhận: Remove-Item .\old-version -Recurse -Force
+
+4. Phân tích Log lỗi số 4
+Bước	 					Câu trả lời
+(a) Dòng lỗi trực tiếp				FileNotFoundError: [Errno 2] No such file or directory: 'data/input.csv'
+(b) Từ khóa lỗi					FileNotFoundError – không tìm thấy file.
+(c) Kiểm tra tiếp				Đang chạy trong thư mục src, nên chương trình tìm sai vị trí của data/input.csv. Cần kiểm tra lại đường dẫn trong code.
+
+Cách sửa: Nếu giữ nguyên cấu trúc thư mục, đổi đường dẫn trong main.py thành: data = read_csv("../data/input.csv")

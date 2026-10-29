@@ -1,0 +1,79 @@
+SESSION07
+(Bài tập tổng hợp) Terminal Nâng Cao & Tiền Đề Scripting
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần1: Đọc và định vị tệp tin.
+Câu 1: Viết lệnh.
+Get-Content .\logs\server.log
+
+Câu 2: Giải thích.
+Notepad có thể nạp lượng lớn dữ liệu vào RAM nên dễ làm máy chậm hoặc treo khi mở file 500 MB. PowerShell đọc theo luồng từng dòng nên hạn chế sử dụng RAM hơn.
+
+Câu 3 :Viết:
+Get-ChildItem -Path . -Recurse -Filter *.log
+
+Phần2: Lọc dữ liệu và Pipe.
+Câu 1:Viết lệnh:
+Select-String -Path .\logs\server.log -Pattern "ERROR"
+
+Câu 2: Phân biệt:
+Câu hỏi	                        	Lệnh PowerShell
+File server.log nằm ở đâu?		Get-ChildItem -Path . -Recurse -Filter server.log
+Trong file có dòng lỗi 404 không?	Select-String -Path .\logs\server.log -Pattern "404"
+
++ Lệnh kết hợp Pipe để đọc file và lọc lỗi 404:
++ Get-Content .\logs\server.log | Select-String "404"
+
+Câu 3: Viết:
+Get-ChildItem -Path . -Recurse -Filter *.log | Select-String -Pattern "INFO" -NotMatch
+
+Phần3: Toán tử chuyển hướng > và >>
+Câu 1: Ghi đè báo cáo
+Get-Content .\logs\server.log | Select-String "404" > .\reports\daily_report.txt
+
+Câu 8: Ghi thêm lỗi mới
+Write-Output "10:15:00 ERROR 404 Not Found /api/products" >> .\reports\daily_report.txt
+Nếu dùng nhầm > thay cho >>, nội dung báo cáo cũ sẽ bị ghi đè và mất đi.
+
+Phần4: Shell Script và lệnh Write-Output.
+Câu 1: Viết lệnh:
+Write-Output "Dang loc log..."
+Write-Output "=== LOG REPORT ===" > .\reports\daily_report.txt
+
+Câu 2: Nội dung file scripts\auto_report.ps1
+
+# Loc loi 404 va tao bao cao hang ngay
+Write-Output "Bat dau chay script..."
+Write-Output "=== LOG REPORT ===" > .\reports\daily_report.txt
+Get-Content .\logs\server.log | Select-String "404" >> .\reports\daily_report.txt
+
+Trong đó, > dùng để ghi tiêu đề và >> dùng để thêm kết quả lọc vào bên dưới, tránh làm mất tiêu đề.
+
+Phần5: Chạy và thẩm định Script AI.
+Câu 1: Quy trình Viết – Chạy – Kiểm tra
+
+(a) Chạy script tại thư mục devops-lab:
+.\scripts\auto_report.ps1
+
+Nếu PowerShell chặn chạy script, thực hiện: 
+Set-ExecutionPolicy -Scope Process Bypass
+
+Sau đó chạy lại script.
+
+(b) Kiểm tra nội dung báo cáo:
+Get-Content .\reports\daily_report.txt
+
+Câu 2: Thẩm định cleanup.ps1
+
+(a) Dòng lệnh nguy hiểm:
+Remove-Item -Recurse -Force C:\*
+
+Lệnh này có thể xóa hàng loạt dữ liệu trên ổ C:, bao gồm file hệ thống và dữ liệu cá nhân, khiến máy bị lỗi nghiêm trọng. Vì vậy, cần kiểm tra script trước khi chạy.
+
+(b) Sửa lại cho an toàn hơn:
+Write-Output "Cleaning up temporary files..."
+Remove-Item -Recurse -Force .\temp\*
+Write-Output "Done!"

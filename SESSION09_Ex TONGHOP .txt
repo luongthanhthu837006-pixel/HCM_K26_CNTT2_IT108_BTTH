@@ -1,0 +1,88 @@
+SESSION09
+(Bài tập tổng hợp) Dựng README.md cho Dự Án CLB SmartCampus
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+Phần 1 và 2: README.md
+markdown
+# 📱 SmartCampus
+
+Ứng dụng di động giúp sinh viên **PTIT** tra cứu *lịch học*, phòng trống và nhận thông báo từ nhà trường.
+
+- Tra cứu lịch học
+  - Tìm theo mã sinh viên
+- Xem danh sách phòng trống theo tòa nhà
+
+[CLB Lập trình](https://clblaptrinh.ptit.edu.vn)
+
+![Logo SmartCampus](https://example.com/logo.png)
+
+> ⚠️ Dự án đang phát triển, chưa dùng cho mục đích chính thức.
+
+---
+
+## :rocket: Cài đặt
+
+```bash
+git clone https://github.com/clb-lap-trinh/smartcampus.git
+npm install
+npm start
+```
+
+## Tiến độ
+
+- [x] Tra cứu lịch học theo mã sinh viên
+- [x] Xem danh sách phòng trống theo tòa nhà
+- [ ] Thông báo đẩy (push notification)
+- [ ] Đăng nhập bằng tài khoản trường
+
+## :package: Thư viện
+
+| Thư viện | Phiên bản | Mục đích |
+| :--- | :---: | --- |
+| React Native | 0.74 | Xây giao diện đa nền tảng iOS/Android |
+| Axios | 1.6 | Gọi API lấy dữ liệu lịch học |
+
+Để in nghiêng, đặt từ giữa hai dấu \*, và tạo tiêu đề bằng dấu \# đầu dòng.
+Phần 3: Hỏi AI
+
+Prompt 3 phần:
+
+markdown
+## Tôi là ai / Bối cảnh
+Tôi là sinh viên mới vào CLB Lập trình, đang làm dự án SmartCampus. Tôi chưa biết lập trình nền tảng.
+
+## Chủ đề / Nội dung cần xử lý
+Giải thích thuật ngữ `API`.
+
+## Yêu cầu
+- Giải thích API là gì trong 1–2 câu dễ hiểu
+- Cho 1 ví dụ đời thường
+- Nêu cách API được dùng trong app tra cứu lịch học
+
+## Không cần
+- Không cần code hay thuật ngữ nâng cao (REST, JSON...)
+
+Tóm tắt 3 bước đọc (≤ 3 câu): “API là người trung gian giúp hai phần mềm trao đổi dữ liệu, giống người phục vụ nối khách với nhà bếp. Trong SmartCampus, app dùng API để xin lịch học từ máy chủ của trường.”
+
+Lưu file: copy câu trả lời của AI, dán vào StackEdit, lưu thành api_giai_thich.md theo quy trình 4 bước (phần này bạn tự thao tác).
+
+Phần 4: Bẫy cú pháp
+
+Có 2 lỗi:
+
+Bảng thiếu dòng phân cách | --- | --- | dưới dòng tiêu đề.
+Task list viết -[x], -[ ] thiếu dấu cách sau -.
+ 
+Hoàn thiện 
+markdown
+| Tính năng | Trạng thái |
+| --- | --- |
+| Tra cứu lịch học | Xong |
+| Push notification | Đang làm |
+
+- [x] Tra cứu lịch học
+- [ ] Push notification
